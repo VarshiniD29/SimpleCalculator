@@ -1,5 +1,8 @@
+package ubuntu;
+
 
 import java.util.Scanner;
+
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 
 public class StandardDeviation {
@@ -8,19 +11,15 @@ public class StandardDeviation {
 	 public double calculateStd(double[] nums)
 	 {
 		
-		 Scanner sc=new Scanner(System.in);   
-	    	double[] nums1 = new double[5];
-			System.out.println("Enter Elements: "); 
+//	    	List<Integer> nums1=new ArrayList<Integer>(5);
 		 
-		    for (int i = 0; i < nums1.length; i++)
-		    {
-		        nums1[i] = sc.nextInt();
-		    }   
+//			System.out.println("Please enter the number of Elements: "); 
+//			 int noe =  sc.nextInt();  
 		    
 		    DescriptiveStatistics stats = new DescriptiveStatistics();
-		    for (int i = 0; i < nums1.length; i++) 
+		    for (int i = 0; i < nums.length; i++) 
 		    {
-		        stats.addValue(nums1[i]);
+		        stats.addValue(nums[i]);
 		    }
 		  System.out.println("StandardDeviation is:" + stats.getStandardDeviation());
 			double s77 = stats.getStandardDeviation();
@@ -34,7 +33,17 @@ public class StandardDeviation {
 	 public static void main(String args[])
 	 {
 	 StandardDeviation std = new StandardDeviation();
-	 std.calculateStd(null);
+	 
+	 	double[] nums = new double[5];
+	 	Scanner sc=new Scanner(System.in);   
+	 	
+		System.out.println("Enter Elements: "); 
+	 
+	    for (int i = 0; i < nums.length; i++)
+	    {
+	        nums[i] = sc.nextInt();
+	    } 
+	 std.calculateStd(nums);
 	 //System.out.println(total);
 }
 	
